@@ -90,7 +90,10 @@ The security team was able to flag some suspicious commands executed on the work
 
 ### Question 11: What is the PID of the malicious process used to establish the C2 connection?
 
+![question11](question11_answer.png)
+
 **Explanation:** Back to tracking updater.exe, check outbound connections with windows.netstat
+
 **Answer:** `PID: 6216`
 
 
