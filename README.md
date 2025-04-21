@@ -34,7 +34,7 @@ The security team was able to flag some suspicious commands executed on the work
 ---
 
 ### Question 4: What is the MD5 hash of the malicious attachment?
-
+![md5sum](question4_answer.png)
 
 **Explanation:** `Save the file, open a new terminal and md5sum <filename>`
 
