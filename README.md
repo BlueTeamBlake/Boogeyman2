@@ -101,6 +101,41 @@ The security team was able to flag some suspicious commands executed on the work
 
 **Answer:** `PID: 6216`
 
+### Question 11: What is the full file path of the malicious process used to establish the C2 connection?
+
+![path](question10_answer.png)
+
+**Explanation:** Checking the cmdline again we can see where the file was placed.
+
+**Answer:** `C:\Windows\Tasks\updater.exe`
+
+### Question 12: What is the IP address and port of the C2 connection initiated by the malicious binary? (Format: IP address:port)
+
+![ip](question11_answer.png)
+
+**Explanation:** Here check the windows.netstat and search for the updater.exe outbound connection
+
+**Answer:** `128.199.95.189:8080`
+
+### Question 13: What is the full file path of the malicious email attachment based on the memory dump?
+
+![path2](question12_answer.png)
+
+**Explanation:** With Volatility we can check the paths of file in mem with `windows.filescan`
+
+**Answer:** `C:\Users\maxine.beck\AppData\Local\Microsoft\Windows\INetCache\Content.Outlook\WQHGZCFI\Resume_WesleyTaylor (002).doc`
+
+### Question 14: The attacker implanted a scheduled task right after establishing the c2 callback. What is the full command used by the attacker to maintain persistent access?
+
+
+![final](question14_answer.png)
+
+**Explanation:** we can simply using strings on the .raw file and grep | schtasks for scheduled tasks and we'll find our answer
+
+**Answer:** `schtasks /Create /F /SC DAILY /ST 09:00 /TN Updater /TR 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NonI -W hidden -c \"IEX ([Text.Encoding]::UNICODE.GetString([Convert]::FromBase64String((gp HKCU:\Software\Microsoft\Windows\CurrentVersion debug).debug)))\"'`
+
+
+
 
 
 
