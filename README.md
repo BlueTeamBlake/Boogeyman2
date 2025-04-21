@@ -1,5 +1,5 @@
 # Boogeyman2
-# 🕵️ TryHackMe - Boogeyman2 Writeup
+# 🕵️ TryHackMe - Boogeyman2
 
 ## Overview
 
