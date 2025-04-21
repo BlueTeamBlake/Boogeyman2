@@ -36,7 +36,7 @@ The security team was able to flag some suspicious commands executed on the work
 ### Question 4: What is the MD5 hash of the malicious attachment?
 ![md5sum](question4_answer.png)
 
-**Explanation:** `Save the file, open a new terminal and md5sum <filename>`
+**Explanation:** Save the file, open a new terminal and `md5sum <filename>`
 
 **Answer:** `52c4384a0b9e248b95804352ebec6c5b`
 
@@ -45,7 +45,7 @@ The security team was able to flag some suspicious commands executed on the work
 ### Question 5: What URL is used to download the stage 2 payload based on the document's macro?
 ![olevba](Olevba_screenshot.png)
 
-**Explanation:**: `In our tool olevba <filename>, under our IOC we'll see our filepath`
+**Explanation:**: In our tool `olevba <filename>`, under our IOC we'll see our filepath
 
 **Answer:** `https://files.boogeymanisback.lol/aa2a9c53cbb80416d3b47d85538d9971/update.png`
 
@@ -55,7 +55,7 @@ The security team was able to flag some suspicious commands executed on the work
 
 ![olevba](Olevba_screenshot.png)
 
-**Explanation:**: `Also under our IOC in olevba. Additionally we can confirm in volatility by checking windows.cmdline`
+**Explanation:**: Also under our IOC in olevba. Additionally we can confirm in volatility by checking windows.cmdline
 
 **Answer:** `wscript.exe`
 
@@ -63,9 +63,37 @@ The security team was able to flag some suspicious commands executed on the work
 
 ### Question 7: What is the full file path of the malicious stage 2 payload?
 
-**Explanation:** `In volatility, vol -f WKSTN-2961.raw windows.cmdline | grep update`
+![pidpayload](question7_answer.png)
+
+**Explanation:** In volatility, `vol -f WKSTN-2961.raw windows.cmdline | grep update`
 
 **Answer:** `C:\ProgramData\update.js`
+
+### Question 8: What is the PID of the process that executed the stage 2 payload?
+
+**Explanation:** `vol -f WKSTN-2961.raw windows.pslist & cmdline` shows the list of processes, as I went through this lab I noticed updater.js > updater.exe in the windows.cmdline
+**Answer:** `PID: 4260`
+
+### Question 9: What is the parent PID of the process that executed the stage 2 payload?
+
+![pidpayload](question9_answer.png)
+
+**Explanation:** Checking the parent pid of the same .exe. 
+**Answer:** `PPID: 1124`
+
+### Question 10: What URL is used to download the malicious binary executed by the stage 2 payload?
+
+![url](Olevba_screenshot.png)
+
+**Explanation:** There are a few ways to find this answer, simple one if the IOC on olevba report. 
+**Answer:** `https://files.boogeymanisback.lol/aa2a9c53cbb80416d3b47d85538d9971/update.exe`
+
+### Question 11: What is the PID of the malicious process used to establish the C2 connection?
+
+**Explanation:** Back to tracking updater.exe, check outbound connections with windows.netstat
+**Answer:** `PID: 6216`
+
+
 
 
 
