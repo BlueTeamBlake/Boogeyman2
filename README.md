@@ -10,6 +10,11 @@ Maxine, a Human Resource Specialist working for Quick Logistics LLC, received an
 The security team was able to flag some suspicious commands executed on the workstation of Maxine, which prompted the investigation. Given this, you are tasked to analyse and assess the impact of the compromise.
 ---
 
+
+### We can use this screenshot for questions 1-3
+
+![email](email_screenshot.png)
+
 ### Question 1: What email was used to send the phishing email?
 
 **Answer:** `westaylor23@outlook.com`
