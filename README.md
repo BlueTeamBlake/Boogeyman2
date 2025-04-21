@@ -67,7 +67,9 @@ The security team was able to flag some suspicious commands executed on the work
 
 **Explanation:** In volatility, `vol -f WKSTN-2961.raw windows.cmdline | grep update`
 
+
 **Answer:** `C:\ProgramData\update.js`
+
 
 ### Question 8: What is the PID of the process that executed the stage 2 payload?
 
@@ -78,7 +80,10 @@ The security team was able to flag some suspicious commands executed on the work
 
 ![pidpayload](question9_answer.png)
 
+
 **Explanation:** Checking the parent pid of the same .exe. 
+
+
 **Answer:** `PPID: 1124`
 
 ### Question 10: What URL is used to download the malicious binary executed by the stage 2 payload?
