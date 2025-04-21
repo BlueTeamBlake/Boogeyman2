@@ -54,6 +54,7 @@ The security team was able to flag some suspicious commands executed on the work
 ### Question 6: What is the name of the process that executed the newly downloaded stage 2 payload?
 
 ![olevba](Olevba_screenshot.png)
+
 **Explanation:**: `Also under our IOC in olevba. Additionally we can confirm in volatility by checking windows.cmdline`
 
 **Answer:** `wscript.exe`
