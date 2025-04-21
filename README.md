@@ -65,3 +65,5 @@ The security team was able to flag some suspicious commands executed on the work
 **Explanation:** `In volatility, vol -f WKSTN-2961.raw windows.cmdline | grep update`
 **Answer:** `C:\ProgramData\update.js`
 
+
+
