@@ -46,6 +46,7 @@ The security team was able to flag some suspicious commands executed on the work
 
 
 **Explanation:**: `In our tool olevba <filename>, under our IOC we'll see our filepath`
+
 **Answer:** `https://files.boogeymanisback.lol/aa2a9c53cbb80416d3b47d85538d9971/update.png`
 
 ---
@@ -54,11 +55,13 @@ The security team was able to flag some suspicious commands executed on the work
 
 
 **Explanation:**: `Also under our IOC in olevba. Additionally we can confirm in volatility by checking windows.cmdline`
+
 **Answer:** `wscript.exe`
 
 ---
 
 ### Question 7: What is the full file path of the malicious stage 2 payload?
 
+**Explanation:** `In volatility, vol -f WKSTN-2961.raw windows.cmdline | grep update`
 **Answer:** `C:\ProgramData\update.js`
 
