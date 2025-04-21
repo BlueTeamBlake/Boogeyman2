@@ -73,7 +73,10 @@ The security team was able to flag some suspicious commands executed on the work
 
 ### Question 8: What is the PID of the process that executed the stage 2 payload?
 
+![PID](question9_answer.png)
+
 **Explanation:** `vol -f WKSTN-2961.raw windows.pslist & cmdline` shows the list of processes, as I went through this lab I noticed updater.js > updater.exe in the windows.cmdline
+
 **Answer:** `PID: 4260`
 
 ### Question 9: What is the parent PID of the process that executed the stage 2 payload?
