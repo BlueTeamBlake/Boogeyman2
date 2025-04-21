@@ -1,2 +1,52 @@
 # Boogeyman2
-THM Boogeyman2's writeup
+# 🕵️ TryHackMe - Boogeyman2 Writeup
+
+## Overview
+
+After having a severe attack from the Boogeyman, Quick Logistics LLC improved its security defences. However, the Boogeyman returns with new and improved tactics, techniques and procedures
+
+Maxine, a Human Resource Specialist working for Quick Logistics LLC, received an application from one of the open positions in the company. Unbeknownst to her, the attached resume was malicious and compromised her workstation.
+
+The security team was able to flag some suspicious commands executed on the workstation of Maxine, which prompted the investigation. Given this, you are tasked to analyse and assess the impact of the compromise.
+---
+
+### Question 1: What email was used to send the phishing email?
+
+**Answer:** `westaylor23@outlook.com`
+
+---
+
+### Question 2: What is the email of the victim employee?
+
+**Answer:** `maxine.beck@quicklogisticsorg.onmicrosoft.com`
+
+---
+
+### Question 3: What is the name of the attached malicious document?
+
+**Answer:** `Resume_WesleyTaylor.doc`
+
+---
+
+### Question 4: What is the MD5 hash of the malicious attachment?
+
+**Answer:** `52c4384a0b9e248b95804352ebec6c5b`
+
+---
+
+### Question 5: What URL is used to download the stage 2 payload based on the document's macro?
+
+**Answer:** `https://files.boogeymanisback.lol/aa2a9c53cbb80416d3b47d85538d9971/update.png`
+
+---
+
+### Question 6: What is the name of the process that executed the newly downloaded stage 2 payload?
+
+**Answer:** `wscript.exe`
+
+---
+
+### Question 7: What is the full file path of the malicious stage 2 payload?
+
+**Answer:** `C:\ProgramData\update.js`
+
