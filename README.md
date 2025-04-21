@@ -43,7 +43,7 @@ The security team was able to flag some suspicious commands executed on the work
 ---
 
 ### Question 5: What URL is used to download the stage 2 payload based on the document's macro?
-
+![olevba](olevba_screenshot.png)
 
 **Explanation:**: `In our tool olevba <filename>, under our IOC we'll see our filepath`
 
@@ -53,7 +53,7 @@ The security team was able to flag some suspicious commands executed on the work
 
 ### Question 6: What is the name of the process that executed the newly downloaded stage 2 payload?
 
-
+![olevba](olevba_screenshot.png)
 **Explanation:**: `Also under our IOC in olevba. Additionally we can confirm in volatility by checking windows.cmdline`
 
 **Answer:** `wscript.exe`
@@ -63,6 +63,7 @@ The security team was able to flag some suspicious commands executed on the work
 ### Question 7: What is the full file path of the malicious stage 2 payload?
 
 **Explanation:** `In volatility, vol -f WKSTN-2961.raw windows.cmdline | grep update`
+
 **Answer:** `C:\ProgramData\update.js`
 
 
